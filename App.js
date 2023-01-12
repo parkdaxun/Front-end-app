@@ -1,11 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import Splash from './src/screen/splash';
+import Main from "./src/screens/mainscreen";
+import Sleep from "./src/screens/sleepscreen";
+import {NavigationContainer} from "@react-navigation/native";
+import {createStackNavigator} from "@react-navigation/stack";
 
 export default function App() {
+  const Stack = createStackNavigator();
+
   return (
-    <>
-      <Splash/>
-      <StatusBar style="auto" />
-    </>
+      <NavigationContainer>
+          <Stack.Navigator initialRouteName="Main">
+              <Stack.Screen name="Main" component={Main} />
+              <Stack.Screen name="Sleep" component={Sleep} />
+          </Stack.Navigator>
+      </NavigationContainer>
   );
 }
