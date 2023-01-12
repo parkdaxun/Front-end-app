@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import {TouchableOpacity, SafeAreaView, StyleSheet, TextInput, View, Text, Alert} from 'react-native';
 import axios from "axios";
 
-const Signupscreen = () => {
+const App = () => {
     const [nickname, setId] = useState("")
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
     const [checkPwd, setCheckpwd] = useState("")
 
 
-    function login() {
+    function signUp() {
         if(email.trim() === ""){
             Alert.alert("이메일을 입력하세요!")
         }
@@ -19,7 +19,7 @@ const Signupscreen = () => {
         else if(password.trim() === ""){
             Alert.alert("비밀번호를 입력하세요!")
         }
-        else if(password.trim() != checkPwd.trim()){
+        else if(password.trim() !== checkPwd.trim()){
             Alert.alert("비밀번호가 같지 않습니다!")
         } else {
             axios.post("http://10.150.151.211:8080/signup",
@@ -30,7 +30,7 @@ const Signupscreen = () => {
                 }
             ).then(function(resp) {
                 console.log(resp.data)
-                if(resp.data != null && resp.data != "") {
+                if(resp.data != null && resp.data !== "") {
                     Alert.alert("회원가입 성공!!")
                     setId("")
                     setCheckpwd("")
@@ -52,7 +52,7 @@ const Signupscreen = () => {
             <TextInput style={styles.input} placeholder="비밀번호 확인" onChangeText={(checkPwd) => setCheckpwd(checkPwd)} value={checkPwd}/>
             <TouchableOpacity
                 style={styles.signup}
-                onPress={login}
+                onPress={signUp}
             >
                 <Text style={styles.buttonText}>회원가입</Text>
             </TouchableOpacity>
@@ -96,4 +96,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Signupscreen;
+export default App;

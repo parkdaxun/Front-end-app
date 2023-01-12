@@ -21,7 +21,7 @@ function Mainscreen({navigation}) {
                             </TouchableOpacity>
                         </View>
                         <View style={{position:'absolute', marginLeft : 230, marginTop : 40}}>
-                            <TouchableOpacity onPress={() => navigation.navigate("Sleep")}>
+                            <TouchableOpacity onPress={() => navigation.navigate("Call")}>
                                 <Image source={require('../images/phone.png')} />
                                 <Text style={{marginLeft:5, marginTop:8, color:'#AEAEAE'}}>상담</Text>
                             </TouchableOpacity>
