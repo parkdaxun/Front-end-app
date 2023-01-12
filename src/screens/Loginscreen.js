@@ -1,7 +1,7 @@
 import React from 'react';
-import { Image, Button, SafeAreaView, StyleSheet, TextInput, View, Alert, TouchableOpacity, onPress, Text, Dimensions } from 'react-native';
+import { Image, SafeAreaView, StyleSheet, TextInput, View, TouchableOpacity, onPress, Text} from 'react-native';
 
-const loginscreen = () => {
+const Loginscreen = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.card}>
@@ -77,4 +77,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default loginscreen;
+export default Loginscreen;

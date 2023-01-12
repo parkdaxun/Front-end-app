@@ -1,7 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 
-function mainscreen({navigation}) {
+function Mainscreen({navigation}) {
     return (
         <View style={styles.background}>
             <View style={styles.container}>
@@ -16,31 +15,40 @@ function mainscreen({navigation}) {
                 <View>
                     <View  style={styles.box}>
                         <View style={{marginLeft:60, marginTop:40}}>
-                            <Image
-                                source={require('../images/bed.png')}
-                                onPress={() => navigation.navigate('Sleep')}
-                            />
-                            <Text style={{marginLeft:5, marginTop:8, color:'#AEAEAE'}}>취침</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate("Sleep")}>
+                                <Image source={require('../images/bed.png')}/>
+                                <Text style={{marginLeft:5, marginTop:8, color:'#AEAEAE'}}>취침</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{position:'absolute', marginLeft : 230, marginTop : 40}}>
-                            <Image source={require('../images/phone.png')} />
-                            <Text style={{marginLeft:5, marginTop:8, color:'#AEAEAE'}}>상담</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate("Sleep")}>
+                                <Image source={require('../images/phone.png')} />
+                                <Text style={{marginLeft:5, marginTop:8, color:'#AEAEAE'}}>상담</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{marginLeft:60, marginTop : 95}}>
-                            <Image source={require('../images/camera.png')} />
-                            <Text style={{marginLeft:2, marginTop:8, color:'#AEAEAE'}}>카메라</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate("Sleep")}>
+                                <Image source={require('../images/camera.png')} />
+                                <Text style={{marginLeft:2, marginTop:8, color:'#AEAEAE'}}>카메라</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{position:'absolute', marginLeft:230, marginTop:185}}>
-                            <Image source={require('../images/volume.png')} />
-                            <Text style={{marginLeft:5, marginTop:8, color:'#AEAEAE'}}>음성</Text>
+                            <TouchableOpacity  onPress={() => navigation.navigate("Sleep")}>
+                                <Image source={require('../images/volume.png')} />
+                                <Text style={{marginLeft:5, marginTop:8, color:'#AEAEAE'}}>음성</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{marginLeft:60, marginTop:100}}>
-                            <Image source={require('../images/setting.png')} />
-                            <Text style={{marginLeft:5, marginTop:8, color:'#AEAEAE'}}>설정</Text>
+                            <TouchableOpacity  onPress={() => navigation.navigate("Sleep")}>
+                                <Image source={require('../images/setting.png')} />
+                                <Text style={{marginLeft:5, marginTop:8, color:'#AEAEAE'}}>설정</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{position:'absolute', marginLeft:230, marginTop : 340}}>
-                            <Image source={require('../images/bell.png')} />
-                            <Text style={{marginLeft:5, marginTop:8, color:'#AEAEAE'}}>알림</Text>
+                            <TouchableOpacity  onPress={() => navigation.navigate("Sleep")}>
+                                <Image source={require('../images/bell.png')} />
+                                <Text style={{marginLeft:5, marginTop:8, color:'#AEAEAE'}}>알림</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>
@@ -95,4 +103,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default mainscreen;
+export default Mainscreen;
