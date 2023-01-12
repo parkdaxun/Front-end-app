@@ -1,4 +1,3 @@
-
 import Main from "./src/screens/mainscreen";
 import Sleep from "./src/screens/sleepscreen";
 import {NavigationContainer} from "@react-navigation/native";
