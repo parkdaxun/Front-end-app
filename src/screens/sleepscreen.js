@@ -1,10 +1,8 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-function sleepscreen() {
+export default function Sleepscreen() {
     return (
         <>
         </>
     );
 }
-
-export default sleepscreen;
